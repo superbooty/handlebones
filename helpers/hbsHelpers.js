@@ -11,7 +11,7 @@ Handlebars = require('handlebars');
 var hbsHelper = exports = module.exports = {};
 
 hbsHelper.setupHelpers = function () {
-    Handlebars.registerHelper('everyNth', function (context, every, options) {
+        Handlebars.registerHelper('everyNth', function (context, every, options) {
         var fn = options.fn, inverse = options.inverse;
         var ret = "";
         console.log(options.data.index + 1)
@@ -19,6 +19,16 @@ hbsHelper.setupHelpers = function () {
 
         return (options.data.index ) % every == 0 ? fn(context) : inverse(this);
     });
+
+    Handlebars.registerHelper('*', function (context, amount, options) {
+        var fn = options.fn, inverse = options.inverse;
+        var ret = "";
+        console.log(options.data.index + 1)
+        console.log( (options.data.index + 1) % every );
+
+        return (options.data.index ) % every == 0 ? fn(context) : inverse(this);
+    });
+
 
 }
 
