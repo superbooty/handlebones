@@ -32,6 +32,10 @@
 
 }
 
+.shelf-item-desc {
+    padding: 10px 0 10px 10px;
+}
+
 .shelf-item-price{
     color: #252627;
     font-family:  verdana,arial,lucida,sans-serif;
@@ -116,6 +120,7 @@
 .product-finder-filter-selectors {
     margin:auto;
     display:block;
+    padding: 25px 0 0;
     width:950px;
 }
 
@@ -134,13 +139,23 @@
 .product-finder-filter-msg {
     float: left;
     padding: 30px 0 20px 10px;
+    font-size: 14px;
+    font-weight: normal;
 }
 
 .product-finder-filter-results .product-finder-filter-clear-btn {
-    float:right;
-    color:#050;
+    background-image: -moz-linear-gradient(center top , rgba(182, 182, 182, 0.95) 0%, #E6E6E6 5%, #FFFFFF 80%);
+    border: 1px solid #A3A3A3;
+    border-radius: 21px 21px 21px 21px;
+    box-shadow: 0 1px 3px rgba(130, 130, 130, 0.5), 0 0 2px rgba(255, 255, 255, 0.7) inset;
+    color: #9a9a9a;
     font: bold small 'trebuchet ms',helvetica,sans-serif;
+    font-size: 14px;
+    padding: 10px 20px;
+    float:right;
+    margin: 20px;
 }
+
 
 .product-finder-filter-break h2 {
     background-image: -moz-linear-gradient(center top , rgba(182, 182, 182, 0.95) 10%, #E6E6E6 5%, #FFFFFF 80%);
@@ -149,10 +164,51 @@
     padding: 1px 0 9px;
 }
 
-.slider-value {
-    display:none;
-    position:absolute;
-    background: url("/images/slider_val.png") no-repeat scroll 0 0;
-    width:62px;
-    height:43px;
+
+.bubble
+{
+    position: absolute;
+    width: 62px;
+    height: 40px;
+    padding: 0px;
+    background: #FFFFFF;
+    border: #cccccc solid 1px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    text-align:center;
+    vertical-align: middle;
+    font-size: 24px;
+    font-weight: normal;
+    display:none
 }
+
+.bubble:after
+{
+    content: "";
+    position: absolute;
+    bottom: -7px;
+    left: 25px;
+    border-style: solid;
+    border-width: 7px 7px 0;
+    border-color: #FFFFFF transparent;
+    display: block;
+    width: 0;
+    z-index: 1;
+}
+
+.bubble:before
+{
+    content: "";
+    position: absolute;
+    top: 41px;
+    left: 25px;
+    border-style: solid;
+    border-width: 7px 7px 0;
+    border-color: #cccccc transparent;
+    display: block;
+    width: 0;
+    z-index: 0;
+}
+
+
