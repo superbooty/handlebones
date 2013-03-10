@@ -18,10 +18,10 @@ example - cd ~/Documents/WebstormProjects/assignemnt1
 
 run the following command
 
-npm install -d  (this will read the package.json file and install the dependencies).
+    npm install -d  (this will read the package.json file and install the dependencies).
 
 finally start the server (Remember to do this from the folder that contains the app.js file)
 
-node app.js
+    node app.js
 
 
