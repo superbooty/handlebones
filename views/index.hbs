@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <link href="/stylesheets/global.css" rel="stylesheet">
+    <link href="/stylesheets/header.css" rel="stylesheet">
+    <link href="/stylesheets/my_first_component.css" rel="stylesheet">
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.1/themes/base/jquery-ui.css"/>
+    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+    <script src="http://code.jquery.com/ui/1.10.1/jquery-ui.js"></script>
+    <script>
+        var items = {{{myData}}} ;
+        $(function () {
+            $("#slider-range").slider({
+                range:true,
+                min:0,
+                max:50,
+                values:[ 20, 40 ],
+                slide:function (event, ui) {
+
+                    var ele1 = $("#slider-range").find('a:first');
+                    var ele2 = $("#slider-range").find('a:last');
+
+                    var o1 = {top: ele1.offset().top - 50, left:ele1.offset().left - 30 };
+                    var o2 = {top: ele2.offset().top - 50, left:ele2.offset().left - 30 };
+                    var that = this;
+                    $("#range-value1").show();
+                    $("#range-value1").offset(o1);
+
+                    $("#range-value2").show();
+                    $("#range-value2").offset(o2);
+
+                    $("#amount").val("$" + ui.values[0] + " - $" + ui.values[1]);
+
+
+                }
+            });
+            $("#amount").val("$" + $("#slider-range").slider("values", 0) +
+                    " - $" + $("#slider-range").slider("values", 1));
+
+
+            $('#tv-brand').change(function (e) {
+                alert('You picked: ');
+            });
+
+            $("#tv-types").change(function (e) {
+                alert('You picked: ');
+            });
+
+            $('#tv-sort').change(function (e) {
+                alert('You picked: ');
+            });
+        });
+
+
+
+
+    </script>
+</head>
+
+<body>
+
+<section class="header">
+    <section class="header-top">
+        <section class="header-logo">
+            <img src="/images/walmart_logo2.png" alt="Walmart. Save Money. Live Better.">
+        </section>
+        <section class="header-search">
+            <section class="search-box-wrapper">
+                <form action="">
+                    <input type="text" class="search-box" name="s" placeholder="Search" value=""/>
+
+                </form>
+            </section>
+        </section>
+        <section class="header-links">
+            <section class="header-menu">
+                <section class="header-menu-h">
+                    <a class="header-menu-a" href="">Create</a>
+                    <section class="header-menu-s"></section>
+                </section>
+            </section>
+            <section class="header-menu">
+                <section class="header-menu-h">
+                    <a class="header-menu-a" href="">Sign In</a>
+                    <section class="header-menu-s"></section>
+                </section>
+            </section>
+            <section class="header-menu">
+                <section class="header-menu-h">
+                    <a class="header-menu-a" href="">0 Items</a>
+                    <section class="header-menu-s"></section>
+                </section>
+            </section>
+        </section>
+    </section>
+    <section class="header-break">
+        <h2></h2>
+    </section>
+    <section class="header-bread-crumb">
+        <img src="/images/home_icon.png"/>
+        <section class="header-bread-crumb-path"></section>
+    </section>
+
+</section>
+
+
+<section class="product-finder-pov">
+    <img src="/images/product_finder_pov.png"/>
+</section>
+
+
+<section class="product-finder-filter-container">
+    <section class="product-finder-filter-selectors">
+        <div class="product-finder-filter-img">
+        </div>
+        <section class="product-finder-filter-slider">
+            <div id="range-value1" class="slider-value"></div>
+            <div id="range-value2" class="slider-value"></div>
+            <div id="slider-range"></div>
+        </section>
+        <section class="product-finder-filter-dropdowns">
+            <div class="">
+                <select name="tv-type" id="tv-types" class="dropdown-style">
+                    <option value="LCD">LCD</option>
+                    <option value="3D">3D</option>
+                    <option value="LED">LED</option>
+                    <option value="Plasma">Plasma</option>
+                    <option value="Projection">Projection</option>
+                    <option value="Smart">Smart</option>
+                </select>
+            </div>
+            <div class="">
+                <select name="tv-brand" id="tv-brand">
+                    <option value="LG">LG</option>
+                    <option value="Panasonic">Panasonic</option>
+                    <option value="Samsung">Samsung</option>
+                    <option value="Sony">Sony</option>
+                    <option value="Visio">Visio</option>
+                </select>
+            </div>
+
+            <div class="">
+                <select name="tv-sort" id="tv-sort" class="dropdown-style">
+                    <option value="Price">Price</option>
+                    <option value="AZ">A-Z</option>
+                    <option value="ZA">Z-A</option>
+                </select>
+            </div>
+        </section>
+    </section>
+    <section class="product-finder-filter-break" >
+        <h2></h2>
+    </section>
+    <section class="product-finder-filter-results">
+        <div class="product-finder-filter-msg">
+            X matches for televisions fitting that criteria
+        </div>
+        <input type="button" value="Clear Filters " class="product-finder-filter-clear-btn">
+    </section>
+</section>
+
+<section class="shelf_container">
+    {{#each payload.item}}
+    {{#everyNth @index 4}}
+    <div style="clear:both"></div>
+    {{/everyNth}}
+    <section class="shelf_item">
+        <img src="{{image}}"/>
+
+        <div class="shelf-item-name">
+            {{name}}
+        </div>
+        <div class="shelf-item-price">
+            ${{price}}
+        </div>
+        <div class="shelf-item-ratings">
+            <div title=""></div>
+        </div>
+    </section>
+    {{/each}}
+</section>
+
+</body>
+
+</html>

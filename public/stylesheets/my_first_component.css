@@ -1,0 +1,158 @@
+
+.shelf_container {
+    margin:auto;
+    display:block;
+    width:950px;
+
+}
+
+.shelf_container .shelf_item {
+    width:210px;
+    float:left;
+    padding:0 0 0 24px;
+    color: #333333;
+    font-family: verdana,arial,lucida,sans-serif;
+    font-size: 11px;
+    text-align: left;
+}
+
+.shelf_item img {
+    text-aling:left;
+    width:150px;
+    height:150px;
+}
+
+.shelf-item-name{
+    color: #4f87c1;
+    font-family: verdana,arial,lucida,sans-serif;
+    font-size: 14px;
+    text-align: left;
+    word-wrap:break-word;
+    width:205px;
+
+}
+
+.shelf-item-price{
+    color: #252627;
+    font-family:  verdana,arial,lucida,sans-serif;
+    font-size: 24px;
+    text-align: left;
+    word-wrap:break-word;
+    width:205px;
+
+}
+
+.shelf-item-ratings {
+    background: url("/images/star_ratings.png") repeat-x scroll 0 0 transparent;
+    display: inline-block;
+    height: 20px;
+    width: 95px;
+
+}
+
+.shelf-item-ratings div {
+    background-position: 0 -13px;
+    display: block;
+}
+
+.product-finder-pov {
+    display:inline-block;
+    width:1000px;
+}
+
+.product-finder-pov img {
+    display:block;
+    margin: 0 auto;
+    width:850px;
+}
+
+.product-finder-filter-container {
+    width:1000px;
+    height:130px;
+}
+
+.product-finder-filter-slider {
+    display: inline-block;
+    padding: 50px 50px 5px 0;
+    width: 320px;
+}
+
+.product-finder-filter-slider .ui-widget-content {
+ background-image: -moz-linear-gradient(center top , #CCCCCC 0%, #F5F5F5 80%, #FFFFFF 100%);
+}
+
+
+.product-finder-filter-slider .ui-slider .ui-slider-handle {
+    top: -11px;
+    height: 30px;
+    width:12px;
+}
+
+.product-finder-filter-slider .ui-widget-header {
+    background-image: -moz-linear-gradient(top, #FCB44F 0%, #ffedd4 100%, #FFFFFF 100%);
+    border: 1px solid #AAAAAA;
+    color: #222222;
+    font-weight: bold;
+}
+
+.product-finder-filter-dropdowns {
+    display:inline-block;
+}
+
+.product-finder-filter-dropdowns > div {
+    float: left;
+    padding: 0 0 0 20px;
+}
+
+.product-finder-filter-img {
+    background: url("/images/tv_finder_100X95.png") no-repeat scroll 0 0;
+    width:100px;
+    height:95px;
+    float:left;
+    padding: 0 0 0 50px;
+
+}
+
+.product-finder-filter-selectors {
+    margin:auto;
+    display:block;
+    width:950px;
+}
+
+.product-finder-filter-break {
+    width:950px;
+    margin:auto;
+}
+
+.product-finder-filter-results {
+    width:950px;
+    height:50px;
+    margin:auto;
+    display:block;
+}
+
+.product-finder-filter-msg {
+    float: left;
+    padding: 30px 0 20px 10px;
+}
+
+.product-finder-filter-results .product-finder-filter-clear-btn {
+    float:right;
+    color:#050;
+    font: bold small 'trebuchet ms',helvetica,sans-serif;
+}
+
+.product-finder-filter-break h2 {
+    background-image: -moz-linear-gradient(center top , rgba(182, 182, 182, 0.95) 10%, #E6E6E6 5%, #FFFFFF 80%);
+    border-radius: 20px 20px 0 0;
+    margin-top: 30px;
+    padding: 1px 0 9px;
+}
+
+.slider-value {
+    display:none;
+    position:absolute;
+    background: url("/images/slider_val.png") no-repeat scroll 0 0;
+    width:62px;
+    height:43px;
+}

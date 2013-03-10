@@ -1,0 +1,131 @@
+
+body {
+    width:1000px;
+}
+
+.header {
+    width:1000px;
+    margin-bottom:5px;
+}
+
+.header .header-top {
+    background-image: -moz-linear-gradient(top, #f1f1f1 0%, #F5F5F5 60%, #FFFFFF 100%);
+    height:78px;
+}
+
+.header .header-top section {
+    margin-top:5px;
+}
+
+
+.header-logo {
+    float:left;
+    height:60px;
+    width: 225px;
+}
+
+.header-logo img {
+    height:57px;
+    display:inline-block;
+    padding:10px 0 5px;
+
+}
+
+.header-search {
+    display:inline-block;
+    width:240px;
+}
+
+.search-box-wrapper {
+    height:40px;
+    padding:0px;
+    margin:0px;
+    position:relative; /*important*/
+}
+
+.search-box-wrapper form { display:inline ; }
+
+.search-box-wrapper .search-box {
+    border:5px 5px 5px 5px; /*important*/
+    background-color:#FFFFFF; /*important*/
+    position:absolute; /*important*/
+    top:10px;
+    left:9px;
+    width:200px;
+    height:39px;
+    -webkit-box-shadow:0 0 5px #666 inset;
+    -moz-box-shadow:0 0 5px #666 inset;
+    box-shadow: 3px 3px 5px -3px #8C8C8C inset;
+    background-image:url("http://icons.iconarchive.com/icons/gakuseisean/radium/24/Search-icon.png");
+    background-repeat:no-repeat;
+    background-position: 10px 9px;
+    padding: 0 0 0 32px;
+}
+
+
+
+.header-links {
+   float:right;
+}
+
+.header-menu {
+    display:inline-block;
+    width:133px;
+    position:relative;
+}
+
+.header-menu-h {
+    position:relative;
+}
+
+.header-menu-h .header-menu-a {
+    display:block;padding:0.3em 0.2em;cursor:pointer;
+    color:#8C8C8C;
+    font-family: Arial,Helvetica,Verdana,sans serif;
+    font-size: 15px;
+    border:4px solid transparent; border-bottom-width:0px;
+    border-radius:7px 7px 0px 0px;
+    white-space:nowrap;
+}
+
+.header-menu-s {
+    visibility:hidden;
+    position:relative;
+    background-color:#fff;
+    border:solid #ccc;
+    border-width:0px 4px;
+    height:4px;
+    z-index:102;
+}
+
+.header-break {
+    display:inline-block;
+    width:1000px;
+}
+
+.header-break h2{
+
+    margin-bottom: 0.6em;
+    width:1000px;
+    border-bottom: 2px solid #F0F0F0;
+    padding: 6px 0 0 0;
+    color: #000;
+    font: normal 150%/1.5 sans-serif;
+}
+
+.header-bread-crumb {
+    width:1000px;
+    height:25px;
+    margin-left:15px;
+}
+
+.header-bread-crumb img {
+    float:left;
+    width: 16px;
+    height: 16px;
+    margin-right:15px;
+}
+
+.header-bread-crumb-path {
+    float:left;
+}

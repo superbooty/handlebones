@@ -13,7 +13,7 @@ $(function() {
     greeting: 'Hello'
   });
   var indexView = new Application.View({
-    template: Handlebars.templates['index'],
+    template: Handlebars.templates['/views/index'],
     model: model
   });
   indexView.render();
