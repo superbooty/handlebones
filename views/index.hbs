@@ -42,8 +42,6 @@
                     $("#range-value2").offset(o2);
                     $("#range-value2").text(ui.values[1]+"\"");
 
-
-
                 }
             });
 
@@ -62,6 +60,8 @@
             $("#range-value2").offset(o2);
             $("#range-value2").text(73+"\"");
 
+            $('.item-counter').html(items.item.length);
+
             $('#tv-brand').change(function (e) {
                range1 = $("#range-value1").text().split("\"")[0];
                range2 = $("#range-value2").text().split("\"")[0];
@@ -70,6 +70,7 @@
                var filtered = filterOnBrand(filterOnRange(items, rangeArray), e.currentTarget.value );
                // fire off the request to node server
                loadFilteredResults(filtered);
+               $('.item-counter').html(filtered.length);
 
             });
 
@@ -96,6 +97,7 @@
                 var filtered = filterOnType(filterOnRange(items, rangeArray), e.currentTarget.value );
                 // fire off the request to node server
                 loadFilteredResults(filtered);
+                $('.item-counter').html(filtered.length);
             });
 
             $('#tv-sort').change(function (e) {
@@ -259,7 +261,7 @@
     </section>
     <section class="product-finder-filter-results">
         <div class="product-finder-filter-msg">
-            X matches for televisions fitting that criteria
+            <span class="item-counter"></span> matches for televisions fitting that criteria
         </div>
         <input type="button" value="Clear Filters " class="product-finder-filter-clear-btn">
     </section>
