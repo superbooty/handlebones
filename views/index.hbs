@@ -2,11 +2,11 @@
 
 <html>
 <head>
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.1/themes/base/jquery-ui.css"/>
     <link href="/stylesheets/global.css" rel="stylesheet">
     <link href="/stylesheets/header.css" rel="stylesheet">
     <link href="/stylesheets/footer.css" rel="stylesheet">
     <link href="/stylesheets/my_first_component.css" rel="stylesheet">
-    <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.1/themes/base/jquery-ui.css"/>
     <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
     <script src="http://code.jquery.com/ui/1.10.1/jquery-ui.js"></script>
 
@@ -47,19 +47,6 @@
             });
 
 
-            var ele1 = $("#slider-range").find('a:first');
-            var ele2 = $("#slider-range").find('a:last');
-
-            var o1 = {top: ele1.offset().top - 60, left:ele1.offset().left - 30 };
-            var o2 = {top: ele2.offset().top - 60, left:ele2.offset().left - 30 };
-
-            $("#range-value1").show();
-            $("#range-value1").offset(o1);
-            $("#range-value1").text(19+"\"");
-
-            $("#range-value2").show();
-            $("#range-value2").offset(o2);
-            $("#range-value2").text(73+"\"");
 
             $('.item-counter').html(activeArray.length);
 
@@ -284,8 +271,8 @@
         <div class="product-finder-filter-img">
         </div>
         <section class="product-finder-filter-slider">
-            <div id="range-value1" class="bubble">26"</div>
-            <div id="range-value2" class="bubble">60"</div>
+            <div id="range-value1" class="bubble">19"</div>
+            <div id="range-value2" class="bubble">73"</div>
             <div id="slider-range"></div>
         </section>
         <section class="product-finder-filter-dropdowns">
@@ -424,7 +411,28 @@
     </div>
 
 </footer>
+<script>
 
+$(document).ready(function () {
+
+    var ele1Offset = $("#slider-range").find('a:first').offset();
+    var ele2Offset = $("#slider-range").find('a:last').offset();
+
+    var o1 = {top: ele1Offset.top - 60, left:ele1Offset.left - 30 };
+    var o2 = {top: ele2Offset.top - 60, left:ele2Offset.left - 30 };
+
+    $("#range-value1").show();
+    $("#range-value1").offset(o1);
+    $("#range-value1").text(19+"\"");
+
+    $("#range-value2").show();
+    $("#range-value2").offset(o2);
+    $("#range-value2").text(73+"\"");
+
+});
+
+
+</script>
 </body>
 
 </html>
