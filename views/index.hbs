@@ -8,13 +8,7 @@
     <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.1/themes/base/jquery-ui.css"/>
     <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
     <script src="http://code.jquery.com/ui/1.10.1/jquery-ui.js"></script>
-    <script src="lib/jquery.js"></script>
-    <script src="lib/underscore.js"></script>
-    <script src="lib/handlebars.js"></script>
-    <script src="lib/backbone.js"></script>
-    <script src="lib/bootstrap.js"></script>
-    <script src="templates.js"></script>
-    <script src="application.js"></script>
+
     <script>
         var items = {{{myData}}} ;
         $(function () {
@@ -50,7 +44,20 @@
 
 
             $('#tv-brand').change(function (e) {
-                filterOnBrand(items, e.currentTarget.value );
+               var filtered = filterOnBrand(items, e.currentTarget.value );
+               // fire off the request to /form.php
+               var pload = JSON.stringify(filtered);
+               $.ajax({
+                   url: "/products/filtered",
+                   contentType: 'application/json; charset=utf-8',
+                   type: "POST",
+                   data: pload,
+                   success: function (result) {
+                                 $('.shelf_container').html(result);
+                             }
+
+               });
+
             });
 
             $("#tv-types").change(function (e) {
@@ -76,9 +83,11 @@
     filterOnBrand = function(array, brandName){
 
         var arr = jQuery.grep(array.item, function(n, i){
-            return (n.name.match(type) );
+            return (n.name.match(brandName) );
         });
         return arr;
+
+
     }
 
 

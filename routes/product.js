@@ -20,3 +20,10 @@ exports.getProductsAsJSON = function(req, res){
     });
 
 };
+
+exports.getFilteredSection = function(req, res){
+    //var id = req.params.id;
+    var data = req.body;
+    res.render('shelf_container.hbs', {  payload:data});
+
+};

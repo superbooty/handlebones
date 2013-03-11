@@ -1,0 +1,22 @@
+
+{{#each payload}}
+{{#everyNth @index 4}}
+<div style="clear:both"></div>
+{{/everyNth}}
+<section class="shelf_item">
+    <img src="{{image}}"/>
+
+    <div class="shelf-item-name">
+        {{name}}
+    </div>
+    <div class="shelf-item-desc">
+        {{{description}}}
+    </div>
+    <div class="shelf-item-price">
+        ${{price}}
+    </div>
+    <div class="shelf-item-ratings" >
+        <div title=""></div>
+    </div>
+</section>
+{{/each}}

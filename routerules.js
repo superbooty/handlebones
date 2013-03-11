@@ -19,6 +19,7 @@ router.configure = function(app){
     app.get('/user/:id', user.getUser);
     app.get('/data/header', header.getHeaderData);
     app.get('/product/productsAsJSON', product.getProductsAsJSON);
+    app.post('/products/filtered', product.getFilteredSection);
     app.post('/user/addAccount', user.addAccount);
 
 };
