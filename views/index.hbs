@@ -12,7 +12,7 @@
 
     <script>
         var items = {{{myData}}} ;
-
+        var activeArray = items.item;
         $(function () {
             var tvSizes = loadSizes(items.item);
             $("#slider-range").slider({
@@ -72,6 +72,7 @@
                // fire off the request to node server
                loadFilteredResults(filtered);
                $('.item-counter').html(filtered.length);
+               activeArray = filtered;
 
             });
 
@@ -99,10 +100,13 @@
                 // fire off the request to node server
                 loadFilteredResults(filtered);
                 $('.item-counter').html(filtered.length);
+                activeArray = filtered
             });
 
             $('#tv-sort').change(function (e) {
-                alert('You picked: ');
+                var sortOn = e.currentTarget.value;
+                arraySort(activeArray, sortOn);
+                loadFilteredResults(activeArray);
             });
         });
 
@@ -149,6 +153,22 @@
             return (n.name.match(type) );
         });
         return arr;
+    }
+
+    arraySort = function(array, sortType){
+        // apply sorting by price or alphabetical
+        if (sortType == "Price"){
+            array.sort(function(a,b) { return a.price - b.price } );
+
+        }
+
+        if(sortType == "Z-A"){
+
+        }
+
+        if(sortType == "A-Z"){
+
+        }
     }
 
     loadSizes = function(array){
