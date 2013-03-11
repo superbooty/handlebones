@@ -55,29 +55,36 @@
 
             $('#tv-brand').change(function (e) {
                var filtered = filterOnBrand(items, e.currentTarget.value );
-               // fire off the request to /form.php
-               var pload = JSON.stringify(filtered);
-               $.ajax({
-                   url: "/products/filtered",
-                   contentType: 'application/json; charset=utf-8',
-                   type: "POST",
-                   data: pload,
-                   success: function (result) {
-                                 $('.shelf_container').html(result);
-                             }
-
-               });
+               // fire off the request to node server
+               loadFilteredResults(filtered);
 
             });
 
             $("#tv-types").change(function (e) {
-                alert('You picked: ');
+                var filtered = filterOnType(items, e.currentTarget.value );
+                // fire off the request to node server
+                loadFilteredResults(filtered);
             });
 
             $('#tv-sort').change(function (e) {
                 alert('You picked: ');
             });
         });
+
+
+    loadFilteredResults = function (array){
+         var pload = JSON.stringify(array);
+         jQuery.ajax({
+            url: "/products/filtered",
+            contentType: 'application/json; charset=utf-8',
+            type: "POST",
+            data: pload,
+            success: function (result) {
+                         $('.shelf_container').html(result);
+                     }
+
+        });
+    }
 
     filterOnRange = function(array, range){
         var lowRange = range.low;
