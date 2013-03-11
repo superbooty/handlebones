@@ -160,11 +160,9 @@
             </div>
             <div class="">
                 <select name="tv-brand" id="tv-brand">
-                    <option value="LG">LG</option>
-                    <option value="Panasonic">Panasonic</option>
-                    <option value="Samsung">Samsung</option>
-                    <option value="Sony">Sony</option>
-                    <option value="Visio">Visio</option>
+                    {{#each payload.brandName}}
+                        <option value="{{.}}">{{.}}</option>
+                    {{/each}}
                 </select>
             </div>
 
