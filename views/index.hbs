@@ -43,7 +43,7 @@
 
 
             $('#tv-brand').change(function (e) {
-                alert('You picked: ');
+                filterOnBrand(items, e.currentTarget.value );
             });
 
             $("#tv-types").change(function (e) {
@@ -55,8 +55,33 @@
             });
         });
 
+    filterOnRange = function(array, range){
+        var lowRange = range.low;
+        var highRange = range.high;
+
+        var arr = jQuery.grep(array.item, function(n, i){
+            return (n.size >= range.lowRange && n.size <= range.highRange);
+        });
+        return arr;
+
+    }
+
+    filterOnBrand = function(array, brandName){
+
+        var arr = jQuery.grep(array.item, function(n, i){
+            return (n.name.match(type) );
+        });
+        return arr;
+    }
 
 
+    filterOnType = function(array, type){
+
+        var arr = jQuery.grep(array.item, function(n, i){
+            return (n.name.match(type) );
+        });
+        return arr;
+    }
 
     </script>
 </head>
