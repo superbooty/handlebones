@@ -11,13 +11,22 @@
 
     <script>
         var items = {{{myData}}} ;
+
         $(function () {
+            var tvSizes = loadSizes(items.item);
             $("#slider-range").slider({
                 range:true,
                 min:items.minSize,
                 max:items.maxSize,
                 values:[ 19, 73 ],
                 slide:function (event, ui) {
+                    var value = findNearest( ui.value);
+                    if (ui.value == ui.values[0]) {
+                        $("#slider-range").slider('values', 0, value);
+                    }
+                    else {
+                        $("#slider-range").slider('values', 1, value);
+                    }
 
                     var ele1 = $("#slider-range").find('a:first');
                     var ele2 = $("#slider-range").find('a:last');
@@ -54,14 +63,37 @@
             $("#range-value2").text(73+"\"");
 
             $('#tv-brand').change(function (e) {
-               var filtered = filterOnBrand(items, e.currentTarget.value );
+               range1 = $("#range-value1").text().split("\"")[0];
+               range2 = $("#range-value2").text().split("\"")[0];
+
+               var rangeArray = {"low":range1, "high":range2};
+               var filtered = filterOnBrand(filterOnRange(items, rangeArray), e.currentTarget.value );
                // fire off the request to node server
                loadFilteredResults(filtered);
 
             });
 
+            function findNearest(value) {
+                var nearest = null;
+                var diff = null;
+                for (var i = 0; i < tvSizes.length; i++) {
+                    if ((tvSizes[i] <= value) || (tvSizes[i] >= value)) {
+                        var newDiff = Math.abs(value - tvSizes[i]);
+                        if (diff == null || newDiff < diff) {
+                            nearest = tvSizes[i];
+                            diff = newDiff;
+                        }
+                    }
+                }
+                return nearest;
+            }
+
             $("#tv-types").change(function (e) {
-                var filtered = filterOnType(items, e.currentTarget.value );
+                range1 = $("#range-value1").text().split("\"")[0];
+                range2 = $("#range-value2").text().split("\"")[0];
+
+                var rangeArray = {"low":range1, "high":range2};
+                var filtered = filterOnType(filterOnRange(items, rangeArray), e.currentTarget.value );
                 // fire off the request to node server
                 loadFilteredResults(filtered);
             });
@@ -91,7 +123,7 @@
         var highRange = range.high;
 
         var arr = jQuery.grep(array.item, function(n, i){
-            return (n.size >= range.lowRange && n.size <= range.highRange);
+            return (n.size >= lowRange && n.size <= highRange);
         });
         return arr;
 
@@ -99,7 +131,7 @@
 
     filterOnBrand = function(array, brandName){
 
-        var arr = jQuery.grep(array.item, function(n, i){
+        var arr = jQuery.grep(array, function(n, i){
             return (n.name.match(brandName) );
         });
         return arr;
@@ -110,10 +142,24 @@
 
     filterOnType = function(array, type){
 
-        var arr = jQuery.grep(array.item, function(n, i){
+        var arr = jQuery.grep(array, function(n, i){
             return (n.name.match(type) );
         });
         return arr;
+    }
+
+    loadSizes = function(array){
+        var sizes = [] ;
+        for(var i = 0; i < array.length; i++){
+            var value = array[i].size;
+            if(sizes != 'undefined' ){
+                if(jQuery.inArray(value, sizes) == -1){
+                   sizes.push(value);
+                }
+            }
+        }
+        return sizes.sort(function(a,b){return a-b});
+
     }
 
     </script>
