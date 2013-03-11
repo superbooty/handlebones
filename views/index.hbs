@@ -61,14 +61,14 @@
             $("#range-value2").offset(o2);
             $("#range-value2").text(73+"\"");
 
-            $('.item-counter').html(items.item.length);
+            $('.item-counter').html(activeArray.length);
 
             $('#tv-brand').change(function (e) {
                range1 = $("#range-value1").text().split("\"")[0];
                range2 = $("#range-value2").text().split("\"")[0];
 
                var rangeArray = {"low":range1, "high":range2};
-               var filtered = filterOnBrand(filterOnRange(items, rangeArray), e.currentTarget.value );
+               var filtered = filterOnBrand(filterOnRange(activeArray, rangeArray), e.currentTarget.value );
                // fire off the request to node server
                loadFilteredResults(filtered);
                $('.item-counter').html(filtered.length);
@@ -96,7 +96,7 @@
                 range2 = $("#range-value2").text().split("\"")[0];
 
                 var rangeArray = {"low":range1, "high":range2};
-                var filtered = filterOnType(filterOnRange(items, rangeArray), e.currentTarget.value );
+                var filtered = filterOnType(filterOnRange(activeArray, rangeArray), e.currentTarget.value );
                 // fire off the request to node server
                 loadFilteredResults(filtered);
                 $('.item-counter').html(filtered.length);
@@ -106,6 +106,11 @@
             $('#tv-sort').change(function (e) {
                 var sortOn = e.currentTarget.value;
                 arraySort(activeArray, sortOn);
+                loadFilteredResults(activeArray);
+            });
+
+            $('.product-finder-filter-clear-btn').click(function(e){
+                activeArray = items.item;
                 loadFilteredResults(activeArray);
             });
         });
@@ -129,7 +134,7 @@
         var lowRange = range.low;
         var highRange = range.high;
 
-        var arr = jQuery.grep(array.item, function(n, i){
+        var arr = jQuery.grep(array, function(n, i){
             return (n.size >= lowRange && n.size <= highRange);
         });
         return arr;
