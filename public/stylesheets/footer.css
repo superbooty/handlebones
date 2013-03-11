@@ -1,0 +1,101 @@
+.footer {
+    clear:both;
+    height: 539px;
+    text-align: left;
+    padding: 74px 49px 80px 37px;
+    background-color: #2961a3;
+    background-repeat:no-repeat;
+    background-position: bottom right;
+    border: 1px solid #000000;
+}
+
+footer .mailing-list {
+    width: 280px;
+    height: 28px;
+    margin: 0 auto 50px;
+    padding-left: 120px;
+    background: url(img/logo-blue-on-white.png) top left no-repeat;
+}
+.mailing-list .email {
+    width: 198px;
+    height: 17px;
+    padding: 3px 0 3px 10px;
+    border: 1px solid #666;
+}
+.mailing-list .sign-up {
+    position: relative;
+    left: 5px;
+    width: 55px;
+    height:23px;
+    padding-bottom: 2px;
+    font-size: 9px;
+    cursor: pointer;
+    color: #FFF;
+    background-color: rgb(32, 132, 207);
+    background-image: -webkit-linear-gradient(top, #2698E8, #1B76BC);
+    background-image: -moz-linear-gradient(top, #2698E8, #1B76BC);
+    background-image: -ms-linear-gradient(top, #2698E8, #1B76BC);
+    border: 1px outset #2698E8;
+    border-radius: 5px;
+}
+hr.footer {
+    position: relative;
+    height: 5px;
+    margin: 0 0 35px;
+    border-style: none;
+    background-image: -webkit-linear-gradient(top, rgb(0, 87, 132), rgb(0, 120, 184));
+    background-image: -moz-linear-gradient(top, rgb(0, 87, 132), rgb(0, 120, 184));
+    background-image: -ms-linear-gradient(top, rgb(0, 87, 132), rgb(0, 120, 184));
+}
+hr.footer:before,
+hr.footer:after {
+    position: absolute;
+    z-index: 2;
+    width: 150px;
+    height: 5px;
+    content: "";
+}
+hr.footer:before {
+    background: -webkit-linear-gradient(left, rgba(0, 120, 184, 1) 0%,rgba(0, 120, 184, 0) 100%); /* Chrome10+,Safari5.1+ */
+    background: -moz-linear-gradient(left, rgba(0, 120, 184, 1) 0%, rgba(0, 120, 184, 0) 100%); /* FF3.6+ */
+    background: -ms-linear-gradient(left, rgba(0, 120, 184, 1) 0%,rgba(0, 120, 184, 0) 100%); /* IE10+ */
+    background: linear-gradient(to right, rgba(0, 120, 184, 1) 0%,rgba(0, 120, 184, 0) 100%); /* W3C */
+}
+hr.footer:after {
+    right: 0;
+    background: -moz-linear-gradient(left, rgba(0, 120, 184, 0) 0%, rgba(0, 120, 184, 1) 100%); /* FF3.6+ */
+    background: -webkit-linear-gradient(left, rgba(0, 120, 184, 0) 0%,rgba(0, 120, 184, 1) 100%); /* Chrome10+,Safari5.1+ */
+    background: -ms-linear-gradient(left, rgba(0, 120, 184, 0) 0%,rgba(0, 120, 184, 1) 100%); /* IE10+ */
+    background: linear-gradient(to right, rgba(0, 120, 184, 0) 0%,rgba(0, 120, 184, 1) 100%); /* W3C */
+}
+footer .column {
+    float: left;
+    padding-left: 20px;
+}
+footer .column:first-child {
+    padding-left: 25px;
+}
+/* Include h3 column headings for screen readers, but hide them visually */
+footer .column h3 {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+}
+footer .link {
+    display: block;
+    margin-bottom: 3px;
+    font-size: 8px;
+    color: rgb(118,183,227);
+}
+footer .link:hover {
+    color: #FFF;
+}
+footer aside {
+    float: right;
+    width: 182px;
+}
+footer aside h3 {
+    margin: 0;
+    font:normal normal normal 15px Helvetica, Sans-serif;
+    color: #FFF;
+}

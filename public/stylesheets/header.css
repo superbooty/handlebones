@@ -130,13 +130,3 @@ body {
     float:left;
 }
 
-.footer {
-    clear:both;
-    height: 539px;
-    text-align: left;
-    padding: 74px 49px 80px 37px;
-    background-color: #2961a3;
-    background-repeat:no-repeat;
-    background-position: bottom right;
-    border: 1px solid #000000;
-}
