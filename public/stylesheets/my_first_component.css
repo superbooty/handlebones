@@ -84,7 +84,9 @@
 }
 
 .product-finder-filter-slider .ui-widget-content {
- background-image: -moz-linear-gradient(center top , #CCCCCC 0%, #F5F5F5 80%, #FFFFFF 100%);
+    background-image: -moz-linear-gradient(center top , #CCCCCC 0%, #F5F5F5 80%, #FFFFFF 100%);
+    background-image: -webkit-gradient(linear, center top, center bottom, from(#CCCCCC), to(#FFFFFF));
+
 }
 
 
@@ -97,6 +99,7 @@
 
 .product-finder-filter-slider .ui-widget-header {
     background-image: -moz-linear-gradient(top, #FCB44F 0%, #ffedd4 100%, #FFFFFF 100%);
+    background-image: -webkit-gradient(linear, center top, center bottom, from(#FCB44F), to(#FFFFFF));
     border: 1px solid #AAAAAA;
     color: #222222;
     font-weight: bold;
@@ -150,6 +153,7 @@
 
 .product-finder-filter-results .product-finder-filter-clear-btn {
     background-image: -moz-linear-gradient(center top , rgba(182, 182, 182, 0.95) 0%, #E6E6E6 5%, #FFFFFF 80%);
+    background-image: -webkit-gradient(linear, center top, center bottom, from(#E6E6E6), to(#FFFFFF));
     border: 1px solid #A3A3A3;
     border-radius: 21px 21px 21px 21px;
     box-shadow: 0 1px 3px rgba(130, 130, 130, 0.5), 0 0 2px rgba(255, 255, 255, 0.7) inset;
@@ -164,6 +168,7 @@
 
 .product-finder-filter-break h2 {
     background-image: -moz-linear-gradient(center top , rgba(182, 182, 182, 0.95) 10%, #E6E6E6 5%, #FFFFFF 80%);
+    background-image: -webkit-gradient(linear, center top, center bottom, from(#E6E6E6), to(#FFFFFF));
     border-radius: 20px 20px 0 0;
     margin-top: 30px;
     padding: 1px 0 9px;
