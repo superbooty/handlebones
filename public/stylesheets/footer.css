@@ -1,43 +1,48 @@
 .footer {
-    clear:both;
-    height: 539px;
-    text-align: left;
-    padding: 74px 49px 80px 37px;
-    background-color: #2961a3;
-    background-repeat:no-repeat;
-    background-position: bottom right;
+    background-color: #2961A3;
+    background-position: right bottom;
+    background-repeat: no-repeat;
     border: 1px solid #000000;
+    clear: both;
+    height: 539px;
+    margin: 50px 0 0;
+    padding: 74px 49px 80px 37px;
+    text-align: left;
 }
 
 footer .mailing-list {
-    width: 280px;
+    background: url("img/logo-blue-on-white.png") no-repeat scroll left top transparent;
     height: 28px;
-    margin: 0 auto 50px;
-    padding-left: 120px;
-    background: url(img/logo-blue-on-white.png) top left no-repeat;
+    margin: auto;
+    padding: 0 0 80px 220px;
+    width: 580px;
 }
+
 .mailing-list .email {
-    width: 198px;
-    height: 17px;
-    padding: 3px 0 3px 10px;
-    border: 1px solid #666;
+    border: 1px solid #666666;
+    height: 35px;
+    padding: 0 0 3px 15px;
+    width: 320px;
 }
+
+
 .mailing-list .sign-up {
-    position: relative;
-    left: 5px;
-    width: 55px;
-    height:23px;
-    padding-bottom: 2px;
-    font-size: 9px;
-    cursor: pointer;
-    color: #FFF;
-    background-color: rgb(32, 132, 207);
+    background-color: #2084CF;
     background-image: -webkit-linear-gradient(top, #2698E8, #1B76BC);
     background-image: -moz-linear-gradient(top, #2698E8, #1B76BC);
     background-image: -ms-linear-gradient(top, #2698E8, #1B76BC);
     border: 1px outset #2698E8;
-    border-radius: 5px;
+    border-radius: 5px 5px 5px 5px;
+    color: #FFFFFF;
+    cursor: pointer;
+    font-size: 14px;
+    height: 40px;
+    left: 5px;
+    padding-bottom: 2px;
+    position: relative;
+    width: 80px;
 }
+
 hr.footer {
     position: relative;
     height: 5px;
@@ -70,7 +75,7 @@ hr.footer:after {
 }
 footer .column {
     float: left;
-    padding-left: 20px;
+    padding-left: 25px;
 }
 footer .column:first-child {
     padding-left: 25px;
@@ -84,7 +89,7 @@ footer .column h3 {
 footer .link {
     display: block;
     margin-bottom: 3px;
-    font-size: 8px;
+    font-size: 12px;
     color: rgb(118,183,227);
 }
 footer .link:hover {
@@ -98,4 +103,9 @@ footer aside h3 {
     margin: 0;
     font:normal normal normal 15px Helvetica, Sans-serif;
     color: #FFF;
+}
+
+.footer-links {
+    margin:auto;
+    width: 100%;
 }
