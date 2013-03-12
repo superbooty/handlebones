@@ -6,7 +6,7 @@
     <link href="/stylesheets/global.css" rel="stylesheet">
     <link href="/stylesheets/header.css" rel="stylesheet">
     <link href="/stylesheets/footer.css" rel="stylesheet">
-    <link href="/stylesheets/my_first_component.css" rel="stylesheet">
+    <link href="/stylesheets/item_shelf.css" rel="stylesheet">
     <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
     <script src="http://code.jquery.com/ui/1.10.1/jquery-ui.js"></script>
 
@@ -21,17 +21,13 @@
                 max:100,
                 values:[ items.minSize, items.maxSize ],
                 slide:function (event, ui) {
-
                     var ele1 = $("#slider-range").find('a:first');
                     var ele2 = $("#slider-range").find('a:last');
-
                     var o1 = {top: ele1.offset().top - 60, left:ele1.offset().left - 25 };
                     var o2 = {top: ele2.offset().top - 60, left:ele2.offset().left - 25 };
-
                     $("#range-value1").show();
                     $("#range-value1").offset(o1);
                     $("#range-value1").text(ui.values[0]+"\"");
-
                     $("#range-value2").show();
                     $("#range-value2").offset(o2);
                     $("#range-value2").text(ui.values[1]+"\"");
@@ -39,23 +35,22 @@
                 },
 
                 stop:function (event, ui) {
-
-
                     var ele1 = $("#slider-range").find('a:first');
                     var ele2 = $("#slider-range").find('a:last');
-
                     var o1 = {top: ele1.offset().top - 60, left:ele1.offset().left - 25 };
                     var o2 = {top: ele2.offset().top - 60, left:ele2.offset().left - 25 };
-
                     $("#range-value1").show();
                     $("#range-value1").offset(o1);
-
                     $("#range-value1").text(ui.values[0]+"\"");
-
                     $("#range-value2").show();
                     $("#range-value2").offset(o2);
                     $("#range-value2").text(ui.values[1]+"\"");
-
+                    range1 = $("#range-value1").text().split("\"")[0];
+                    range2 = $("#range-value2").text().split("\"")[0];
+                    var rangeArray = {"low":range1, "high":range2};
+                    var filtered = filterOnRange(activeArray, rangeArray);
+                    loadFilteredResults(filtered);
+                    $('.item-counter').html(filtered.length);
                 }
             });
 
