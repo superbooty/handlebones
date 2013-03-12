@@ -4,14 +4,13 @@
     background-repeat: no-repeat;
     border: 1px solid #000000;
     clear: both;
-    height: 539px;
+    height: 385px;
     margin: 50px 0 0;
     padding: 74px 49px 80px 37px;
     text-align: left;
 }
 
 footer .mailing-list {
-    background: url("img/logo-blue-on-white.png") no-repeat scroll left top transparent;
     height: 28px;
     margin: auto;
     padding: 0 0 80px 220px;
@@ -97,8 +96,9 @@ footer .link:hover {
 }
 footer aside {
     float: right;
-    width: 182px;
+    width: 260px;
 }
+
 footer aside h3 {
     margin: 0;
     font:normal normal normal 15px Helvetica, Sans-serif;
