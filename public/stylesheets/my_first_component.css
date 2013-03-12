@@ -107,8 +107,7 @@
 }
 
 .product-finder-filter-slider .ui-widget-header {
-    background-image: -moz-linear-gradient(top, #FCB44F 0%, #ffedd4 100%, #FFFFFF 100%);
-    background-image: -webkit-gradient(linear, center top, center bottom, from(#FCB44F), to(#FFFFFF));
+    background: #FCB44F;
     border: 1px solid #AAAAAA;
     color: #222222;
     font-weight: bold;
