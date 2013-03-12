@@ -93,8 +93,8 @@
 }
 
 .product-finder-filter-slider .ui-widget-content {
-    background-image: -moz-linear-gradient(center top , #CCCCCC 0%, #F5F5F5 80%, #FFFFFF 100%);
-    background-image: -webkit-gradient(linear, center top, center bottom, from(#CCCCCC), to(#FFFFFF));
+    background: -moz-linear-gradient(center top , #CCCCCC 0%, #F5F5F5 80%, #FFFFFF 100%);
+    background: -webkit-gradient(linear, center top, center bottom, from(#CCCCCC), to(#FFFFFF));
 
 }
 

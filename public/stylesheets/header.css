@@ -7,8 +7,8 @@ body { width: 1000px; margin: 0 auto; }
 }
 
 .header .header-top {
-    background-image: -moz-linear-gradient(top, #f1f1f1 0%, #F5F5F5 60%, #FFFFFF 100%);
-    background-image: -webkit-gradient(linear, center top, center bottom, from(#f1f1f1), to(#FFFFFF));
+    background: -moz-linear-gradient(top, #f1f1f1 0%, #F5F5F5 60%, #FFFFFF 100%);
+    background: -webkit-gradient(linear, center top, center bottom, from(#f1f1f1), to(#FFFFFF));
     height:78px;
 }
 
