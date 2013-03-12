@@ -17,26 +17,39 @@
             var tvSizes = loadSizes(items.item);
             $("#slider-range").slider({
                 range:true,
-                min:items.minSize,
-                max:items.maxSize,
-                values:[ 19, 73 ],
+                min:1,
+                max:100,
+                values:[ items.minSize, items.maxSize ],
                 slide:function (event, ui) {
-                    var value = findNearest( ui.value);
-                    if (ui.value == ui.values[0]) {
-                        $("#slider-range").slider('values', 0, value);
-                    }
-                    else {
-                        $("#slider-range").slider('values', 1, value);
-                    }
 
                     var ele1 = $("#slider-range").find('a:first');
                     var ele2 = $("#slider-range").find('a:last');
 
-                    var o1 = {top: ele1.offset().top - 60, left:ele1.offset().left - 30 };
-                    var o2 = {top: ele2.offset().top - 60, left:ele2.offset().left - 30 };
+                    var o1 = {top: ele1.offset().top - 60, left:ele1.offset().left - 25 };
+                    var o2 = {top: ele2.offset().top - 60, left:ele2.offset().left - 25 };
 
                     $("#range-value1").show();
                     $("#range-value1").offset(o1);
+                    $("#range-value1").text(ui.values[0]+"\"");
+
+                    $("#range-value2").show();
+                    $("#range-value2").offset(o2);
+                    $("#range-value2").text(ui.values[1]+"\"");
+
+                },
+
+                stop:function (event, ui) {
+
+
+                    var ele1 = $("#slider-range").find('a:first');
+                    var ele2 = $("#slider-range").find('a:last');
+
+                    var o1 = {top: ele1.offset().top - 60, left:ele1.offset().left - 25 };
+                    var o2 = {top: ele2.offset().top - 60, left:ele2.offset().left - 25 };
+
+                    $("#range-value1").show();
+                    $("#range-value1").offset(o1);
+
                     $("#range-value1").text(ui.values[0]+"\"");
 
                     $("#range-value2").show();
@@ -105,8 +118,8 @@
                 var ele1 = $("#slider-range").find('a:first');
                 var ele2 = $("#slider-range").find('a:last');
 
-                var o1 = {top: ele1.offset().top - 60, left:ele1.offset().left - 30 };
-                var o2 = {top: ele2.offset().top - 60, left:ele2.offset().left - 30 };
+                var o1 = {top: ele1.offset().top - 60, left:ele1.offset().left - 25 };
+                var o2 = {top: ele2.offset().top - 60, left:ele2.offset().left - 25 };
 
                 $("#range-value1").show();
                 $("#range-value1").offset(o1);
@@ -239,19 +252,19 @@
             <section class="header-menu">
                 <section class="header-menu-h">
                     <a class="header-menu-a" href="">Create</a>
-                    <section class="header-menu-s"></section>
+                    <span class="text">a new wish list</span>
                 </section>
             </section>
             <section class="header-menu">
                 <section class="header-menu-h">
                     <a class="header-menu-a" href="">Sign In</a>
-                    <section class="header-menu-s"></section>
+                    <span class="text">to your account</span>
                 </section>
             </section>
             <section class="header-menu">
                 <section class="header-menu-h">
                     <a class="header-menu-a" href="">0 Items</a>
-                    <section class="header-menu-s"></section>
+                    <span class="text">in your cart</span>
                 </section>
             </section>
         </section>
@@ -283,8 +296,10 @@
         </section>
         <section class="product-finder-filter-dropdowns">
             <div class="">
+                <span>Type</span>
+                <br>
                 <select name="tv-type" id="tv-types" class="dropdown-style">
-                    <option selected="selected" value="select" disabled>select one</option>
+                    <option selected="selected" value="select" disabled>all types</option>
                     <option value="LCD">LCD</option>
                     <option value="3D">3D</option>
                     <option value="LED">LED</option>
@@ -294,8 +309,10 @@
                 </select>
             </div>
             <div class="">
+                <span>Brand</span>
+                <br>
                 <select name="tv-brand" id="tv-brand">
-                    <option selected="selected" value="select" disabled>select one</option>
+                    <option selected="selected" value="select" disabled>all brands</option>
                     {{#each payload.brandName}}
                         <option value="{{.}}">{{.}}</option>
                     {{/each}}
@@ -303,6 +320,8 @@
             </div>
 
             <div class="">
+                <span>Sort</span>
+                <br>
                 <select name="tv-sort" id="tv-sort" class="dropdown-style">
                     <option selected="selected" value="select" disabled>select one</option>
                     <option value="Price">Price</option>
@@ -335,7 +354,7 @@
             {{name}}
         </div>
         <div class="shelf-item-desc">
-            {{{description}}}
+            {{{desc description}}}
         </div>
         <div class="shelf-item-price">
             ${{price}}
@@ -427,8 +446,8 @@ $(document).ready(function () {
     var ele1Offset = $("#slider-range").find('a:first').offset();
     var ele2Offset = $("#slider-range").find('a:last').offset();
 
-    var o1 = {top: ele1Offset.top - 60, left:ele1Offset.left - 30 };
-    var o2 = {top: ele2Offset.top - 60, left:ele2Offset.left - 30 };
+    var o1 = {top: ele1Offset.top - 60, left:ele1Offset.left - 25 };
+    var o2 = {top: ele2Offset.top - 60, left:ele2Offset.left - 25 };
 
     $("#range-value1").show();
     $("#range-value1").offset(o1);

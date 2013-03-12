@@ -23,5 +23,9 @@ hbsHelper.setupHelpers = function () {
         return (5 - val) * 19;
     });
 
+    Handlebars.registerHelper('desc', function (desc) {
+        return desc.split(/<li>/i).slice(1).join(', ');
+    });
+
 }
 

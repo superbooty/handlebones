@@ -1,5 +1,5 @@
 .footer {
-    background-color: #2961A3;
+    background-color: #326db2;
     background-position: right bottom;
     background-repeat: no-repeat;
     border: 1px solid #000000;
@@ -101,7 +101,7 @@ footer aside {
 
 footer aside h3 {
     margin: 0;
-    font:normal normal normal 15px Helvetica, Sans-serif;
+    font:normal normal normal 25px Helvetica, Sans-serif;
     color: #FFF;
 }
 
